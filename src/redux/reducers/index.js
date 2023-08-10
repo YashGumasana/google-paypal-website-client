@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import auth from './authReducer'
 import alert from './alertReducer'
-// import payment from './paymentReducer'
+import report from './reportReducer'
 
 
 export default combineReducers({
     auth,
     alert,
-    // payment
+    report
 })

@@ -4,7 +4,7 @@ import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { logout } from '../redux/actions/AuthAction';
 import { useDispatch } from 'react-redux';
 import { getOrderPaypalDetails } from '../redux/actions/user/PaymentAction';
-import jwt_decode from 'jwt-decode'
+// import jwt_decode from 'jwt-decode'
 const clientId = process.env.REACT_APP_PAYPAL_CLIENT_ID;
 
 

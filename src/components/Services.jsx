@@ -51,7 +51,7 @@ function Services() {
                             {/* {
                                 !loading && view && <p>{view}</p>
                             } */}
-                            {!loading && !userYoutubeAccessToken && <div className="border-button" style={{ borderRadius: "5px" }} onClick={handleService} disabled={loading}>
+                            {!loading && token && !userYoutubeAccessToken && <div className="border-button" style={{ borderRadius: "5px" }} onClick={handleService} disabled={loading}>
                                 Click me
                             </div>}
                         </div>

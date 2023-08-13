@@ -1103,9 +1103,18 @@ Banner Style
   max-width: 710px;
 }
 
-.main-banner .left-content .white-button a {
-  background-color: #4b8ef1;
-  color: #fff !important;
+.main-banner .left-content .white-button button {
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: #4b8ef1;
+  outline: none;
+  /* color: #fff !important; */
+}
+
+.main-banner .left-content .white-button a:hover {
+  color: white !important;
+  /* background-color: #4b8ef1 !important; */
 }
 
 /* 
@@ -2537,4 +2546,58 @@ body.modal {
   font-weight: bold;
   word-spacing: 3px;
   margin-bottom: 20px;
+}
+
+.home-container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: space-around;
+}
+
+.yt-signin {
+  z-index: 10;
+  color: #2a2a2a;
+}
+
+.yt-signin h3 {
+  text-transform: uppercase;
+  max-width: 500px;
+  text-align: center;
+  font-size: 20px;
+  word-spacing: 5px;
+  font-weight: 700;
+}
+
+.yt-signin .yt-signin-button {
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: #4b8ef1;
+}
+
+.user-info-container {
+  /* margin-top: 20px; */
+  background-color: #f0f0f0;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #4b8ef1;
+  border-radius: 20px;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-info-container .label {
+  margin: 3px;
+}
+
+.user-info-container span {
+  color: #2a2a2a;
+  /* margin-top: 5pxs; */
 }

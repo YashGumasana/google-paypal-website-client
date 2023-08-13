@@ -17,7 +17,8 @@ function Payment() {
     const location = useLocation();
     const selectedPrice = location.state?.price;
     const planType = location.state?.planType;
-    const token = localStorage.getItem('token')
+    const planDuration = location.state?.planDuration;
+    const token = localStorage.getItem('eonToken')
 
     // useEffect(() => {
     //     // dispatch({
@@ -81,7 +82,7 @@ function Payment() {
                             onApprove={(data, actions) => {
                                 data.price = selectedPrice
                                 data.planType = planType
-                                console.log('data :>> ', data);
+                                data.planDuration = planDuration
                                 dispatch(getOrderPaypalDetails({ data, token }))
 
 

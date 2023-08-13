@@ -1,22 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { getReportsByPython } from '../redux/actions/user/ReportAction'
-import { Audio } from 'react-loader-spinner'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { getReportsByPython } from '../redux/actions/user/ReportAction'
 
 function Services() {
-    const token = localStorage.getItem('token')
-    const userYoutubeAccessToken = localStorage.getItem('userYoutubeAccessToken')
-    const loading = useSelector(state => state.report.loading)
+    // const token = localStorage.getItem('token')
+    // const userYoutubeAccessToken = localStorage.getItem('userYoutubeAccessToken')
+    // const loading = useSelector(state => state.report.loading)
     // const view = useSelector(state => state.report.view)
 
-    console.log('userYoutubeAccessToken :>> ', userYoutubeAccessToken);
-    const dispatch = useDispatch()
+    // console.log('userYoutubeAccessToken :>> ', userYoutubeAccessToken);
+    // const dispatch = useDispatch()
 
-    const handleService = (e) => {
-        e.preventDefault();
-        dispatch(getReportsByPython(token))
-    }
+    // const handleService = (e) => {
+    //     e.preventDefault();
+    //     dispatch(getReportsByPython(token))
+    // }
 
     return (
         <>
@@ -38,8 +37,9 @@ function Services() {
                         <div className="service-item first-service">
                             <div className="icon"></div>
                             <h4>Get View</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, praesentium? Cupiditate, nostrum!</p>
 
-                            {loading && <Audio
+                            {/* {loading && <Audio
                                 height="80"
                                 width="80"
                                 radius="9"
@@ -47,13 +47,13 @@ function Services() {
                                 ariaLabel="loading"
                                 wrapperStyle
                                 wrapperClass
-                            />}
+                            />} */}
                             {/* {
                                 !loading && view && <p>{view}</p>
                             } */}
-                            {!loading && token && !userYoutubeAccessToken && <div className="border-button" style={{ borderRadius: "5px" }} onClick={handleService} disabled={loading}>
+                            {/* {!loading && token && !userYoutubeAccessToken && <div className="border-button" style={{ borderRadius: "5px" }} onClick={handleService} disabled={loading}>
                                 Click me
-                            </div>}
+                            </div>} */}
                         </div>
                     </div>
                     <div className="col-lg-3">

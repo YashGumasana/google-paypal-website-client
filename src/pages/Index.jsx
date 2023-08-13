@@ -8,7 +8,7 @@ import Aboutus from '../components/Aboutus'
 import Footer from '../components/Footer'
 
 function Index() {
-    const isAuth = localStorage.getItem('token')
+    const isAuth = localStorage.getItem('eonToken')
 
     return (
         <>

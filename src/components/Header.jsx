@@ -14,7 +14,7 @@ function Header() {
 
     const [showModal, setShowModal] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
-    const isAuth = localStorage.getItem('token')
+    const isAuth = localStorage.getItem('eonToken')
 
 
 

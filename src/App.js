@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const firstLogin = localStorage.getItem('firstLogin');
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('eonToken');
     const isLoggedIn = firstLogin && token;
     setCurrentUser(isLoggedIn);
   }, [auth]);

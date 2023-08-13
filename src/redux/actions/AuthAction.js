@@ -16,10 +16,13 @@ export const googleLogin = (userData) => async (dispatch) => {
             }
         })
         localStorage.setItem("firstLogin", true)
-        localStorage.setItem("token", JSON.stringify(res.data.data.token))
-        if (res.data.data.response.userYoutubeAccessToken) {
-            localStorage.setItem("userYoutubeAccessToken", true)
+        localStorage.setItem("eonToken", JSON.stringify(res.data.data.token))
+        if (res.data.data.response.isYoutubeSignIn) {
+            localStorage.setItem("isYoutubeSignIn", true)
         }
+        // if (res.data.data.response.userYoutubeAccessToken) {
+        //     localStorage.setItem("userYoutubeAccessToken", true)
+        // }
 
 
         dispatch({
@@ -44,8 +47,10 @@ export const googleLogin = (userData) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
     try {
         localStorage.removeItem('firstLogin')
-        localStorage.removeItem('token')
-        localStorage.removeItem('userYoutubeAccessToken')
+        localStorage.removeItem('eonToken')
+        // localStorage.removeItem('userYoutubeAccessToken')
+        localStorage.removeItem('isYoutubeSignIn')
+
         window.location.href = "/"
     } catch (err) {
         dispatch({

@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Audio } from 'react-loader-spinner'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserYoutubeDetails, youtubSignIn } from '../redux/actions/user/YoutubeAction'
+import Typed from 'react-typed';
+import Dropdown from './modal/DropDown';
 
 
 function Home() {
@@ -9,6 +11,7 @@ function Home() {
     const isYoutubeSignIn = localStorage.getItem('isYoutubeSignIn')
     const loading = useSelector(state => state.youtube.loading)
     const influencer_details = useSelector(state => state.youtube.influencer_details)
+    const [selectedChannelInfo, setSelectedChannelInfo] = useState(null);
 
     const dispatch = useDispatch()
 
@@ -35,8 +38,9 @@ function Home() {
                                         {
                                             !loading && !isYoutubeSignIn &&
                                             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "25px" }}>
-                                                <h3>Sign In with youtube channel</h3>
-                                                <button className='yt-signin-button' onClick={handleYoutubeSignIn}>Sign In</button>
+
+                                                <h3>1. Sign In with youtube channel</h3>
+                                                <button style={{ backgroundColor: "white" }} className='yt-signin-button' onClick={handleYoutubeSignIn}>Sign In</button>
                                             </div>
                                         }
                                         {
@@ -52,14 +56,24 @@ function Home() {
                                         }
                                         {
                                             !loading && isYoutubeSignIn && influencer_details &&
-                                            <div className="user-info-container">
-                                                <div className="label"><span >Email:  </span>{influencer_details.email}</div>
-                                                <div className="label"><span >Channel ID:  </span>{influencer_details.channelId}</div>
-                                                <div className="label"><span >Channel Title:  </span>{influencer_details.channelTitle}</div>
+                                            <div className='flex items-center flex-col'>
+                                                <div className="user-info-container">
+                                                    <div className="label"><span >Email:  </span>{influencer_details?.email}</div>
+                                                    <div className="label"><span >Channel ID:  </span>{selectedChannelInfo ? selectedChannelInfo.channelId : ''}</div>
+                                                    <div className="label"><span >Channel Title:  </span>{selectedChannelInfo ? selectedChannelInfo.channelTitle : ''}</div>
+                                                </div>
+                                                <Dropdown setSelectedChannelInfo={setSelectedChannelInfo} />
+                                                <button style={{ backgroundColor: "white" }} className='yt-signin-button' onClick={handleYoutubeSignIn}>Sign In With Onther Channel</button>
                                             </div>
                                         }
                                     </>
-                                    : <h3 style={{ marginBottom: "40px", fontSize: "30px" }}>Hello,Sign in now to access our services.</h3>
+                                    : <h3 className='text-white' style={{ marginBottom: "40px", fontSize: "30px" }}>
+                                        <Typed
+                                            strings={['Hello,Sign in now to access our services.']}
+                                            typeSpeed={40}
+                                            backSpeed={50}
+                                            loop
+                                        /></h3>
                             }
 
                         </div>
@@ -79,11 +93,11 @@ function Home() {
                                 </div>
                             </div>
                         </div> */}
-                        <div className="col-lg-6">
+                        {/* <div className="col-lg-6">
                             <div className="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                                 <img src="/assets/images/slider-dec.png" alt="" />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

@@ -26,3 +26,27 @@ export const getOrderPaypalDetails = ({ data, token }) => async (dispatch) => {
     }
 }
 
+
+// export const getActivePlan = (token) => async (dispatch) => {
+//     try {
+//         dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } })
+//         const res = await getDataAPI(`user/getActivePlan`, token)
+
+
+//         dispatch({
+//             type: GLOBALTYPES.ALERT,
+//             payload: {
+//                 success: res.data.message
+//             }
+//         })
+//     } catch (err) {
+//         console.log("err", err);
+//         dispatch({
+//             type: GLOBALTYPES.ALERT,
+//             payload: {
+//                 error: err.response.data.message
+//             }
+//         })
+//     }
+// }
+

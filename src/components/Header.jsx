@@ -1,6 +1,6 @@
 // src/components/Header.js
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { useDispatch } from 'react-redux';
 
@@ -11,6 +11,7 @@ function Header() {
 
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [showModal, setShowModal] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
@@ -53,17 +54,17 @@ function Header() {
     };
     return (
         <>
-            <header className=" header-area header-sticky position-fixed bg-light wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+            <header className=" header-area header-sticky  bg-light wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <nav className={!showMenu ? "main-nav main-nav-flex" : "main-nav"} >
+                            <nav style={!showMenu ? { display: "flex", alignItems: "center", justifyContent: "space-between" } : {}} className={!showMenu ? "main-nav main-nav-flex" : "main-nav"} >
                                 <Link to="/" className="logo" >
                                     <img src="/assets/images/logo.png" alt="Chain App Dev" />
                                 </Link>
                                 <ul className={showMenu ? "nav nav-flex" : "nav"} id='header-nav-ul' >
                                     {/* Use ScrollLink from react-scroll */}
-                                    <li style={{ cursor: "pointer" }}>
+                                    {/* <li style={{ cursor: "pointer" }}>
                                         <ScrollLink
                                             activeClass="active"
                                             to="top"
@@ -75,7 +76,7 @@ function Header() {
                                             Home
                                         </ScrollLink>
                                     </li>
-                                    {isAuth && <li style={{ cursor: "pointer" }}>
+                                    <li style={{ cursor: "pointer" }}>
                                         <ScrollLink
                                             activeClass="active"
                                             to="pricing"
@@ -87,7 +88,7 @@ function Header() {
                                             Pricing
                                         </ScrollLink>
                                     </li>
-                                    }
+
                                     <li style={{ cursor: "pointer" }}>
                                         <ScrollLink
                                             activeClass="active"
@@ -112,7 +113,6 @@ function Header() {
                                             About
                                         </ScrollLink>
                                     </li>
-
                                     <li style={{ cursor: "pointer" }}>
                                         <ScrollLink
                                             activeClass="active"
@@ -122,7 +122,7 @@ function Header() {
                                             offset={-50}
                                             duration={1000}
                                         >
-                                            Reviews
+                                            History
                                         </ScrollLink>
                                     </li>
                                     <li style={{ cursor: "pointer" }}>
@@ -136,6 +136,22 @@ function Header() {
                                         >
                                             Contact Us
                                         </ScrollLink>
+                                    </li> */}
+
+                                    <li style={{ cursor: "pointer" }}>
+                                        <Link to="/about">
+                                            About Us
+                                        </Link>
+                                    </li>
+                                    <li style={{ cursor: "pointer" }}>
+                                        <Link to="/history">
+                                            History
+                                        </Link>
+                                    </li>
+                                    <li style={{ cursor: "pointer" }}>
+                                        <Link to="/setting">
+                                            Setting
+                                        </Link>
                                     </li>
                                     <li className='sign-in-button-li'>
                                         <div className="gradient-button">

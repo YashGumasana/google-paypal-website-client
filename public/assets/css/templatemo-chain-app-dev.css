@@ -407,7 +407,7 @@ header
 .header-area {
   background-color: transparent;
   border-bottom: 1px solid rgba(42, 42, 42, 0.2);
-  position: absolute;
+  /* position: absolute; */
   left: 0px;
   right: 0px;
   z-index: 100;
@@ -2456,6 +2456,7 @@ responsive
 
 /* Add styles for the popupContainer (the modal) */
 .popupContainer {
+  /* z-index: 200; */
   /* Position the popup in the center */
   position: fixed;
   top: 50%;
@@ -2470,7 +2471,7 @@ responsive
   padding: 20px;
 
   /* Add a z-index to ensure the popup stays on top of other elements */
-  z-index: 999;
+  z-index: 999 !important;
 
   /* Apply a maximum width to the popup if needed */
   max-width: 400px;
@@ -2486,7 +2487,7 @@ responsive
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   /* Adjust the alpha value for the desired level of blur */
-  z-index: 990;
+  z-index: 990 !important;
   /* Set a lower z-index than the popup to make sure the popup stays above the backdrop */
 }
 

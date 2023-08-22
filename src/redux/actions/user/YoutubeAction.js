@@ -59,3 +59,31 @@ export const getUserYoutubeDetails = (token) => async (dispatch) => {
         })
     }
 }
+
+
+export const updateYoutubeChannelStatus = (channelId, token) => async (dispatch) => {
+    console.log('updateYoutubeChannelStatus')
+    try {
+        console.log('updateYoutubeChannelStatus :>> ', channelId);
+
+
+        dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } })
+
+        console.log('updateYoutubeChannelStatus :>> 2', channelId);
+        const res = await postDataAPI(`user/updateYoutubeChannelStatus`, { channelId }, token)
+
+
+        console.log('getUserYoutubeDetails :>> ', res.data);
+
+
+        dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: false } })
+    } catch (err) {
+        console.log("err", err);
+        dispatch({
+            type: GLOBALTYPES.ALERT,
+            payload: {
+                error: err.response.data.message
+            }
+        })
+    }
+}

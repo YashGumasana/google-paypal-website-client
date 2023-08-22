@@ -9,6 +9,7 @@ import { GLOBALTYPES } from '../redux/actions/GlobalTypes';
 
 
 function SignInModal({ display, onClose }) {
+  console.log(' :>> ', 'object');
   const dispatch = useDispatch()
 
   const handleDisplayChange = () => {

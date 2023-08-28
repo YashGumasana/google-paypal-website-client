@@ -20,6 +20,8 @@ export const youtubSignIn = (token) => async (dispatch) => {
             localStorage.setItem("isYoutubeSignIn", true)
         }
         dispatch({ type: YOUTUBE_TYPES.LOADING, payload: { loading: false } })
+        window.location.reload();
+
     }
     catch (err) {
         console.log("err", err);

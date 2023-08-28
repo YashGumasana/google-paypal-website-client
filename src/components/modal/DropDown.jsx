@@ -11,15 +11,19 @@ function Dropdown({ setSelectedChannelInfo }) {
     const youtubeDetails = useSelector(state => state.youtube.influencer_details).youtubeChannels;
 
     useEffect(() => {
+        console.log('youtubeDetails', youtubeDetails)
         if (youtubeDetails && youtubeDetails.length > 0) {
-            setSelectedCategory(youtubeDetails[0].channelTitle);
-            const selectedChannel = youtubeDetails.find((detail) => detail.channelTitle === youtubeDetails[0].channelTitle);
+            // Get the selected channel title from local storage
+            const storedSelectedCategory = localStorage.getItem('selectedCategory');
+            setSelectedCategory(storedSelectedCategory || youtubeDetails[0].channelTitle);
+
+            const selectedChannel = youtubeDetails.find(detail => detail.channelTitle === storedSelectedCategory);
             if (selectedChannel) {
-                dispatch(updateYoutubeChannelStatus(selectedChannel.channelId, token))
+                dispatch(updateYoutubeChannelStatus(selectedChannel.channelId, token));
                 setSelectedChannelInfo(selectedChannel);
             }
         }
-    }, [dispatch, setSelectedChannelInfo, youtubeDetails]);
+    }, [dispatch, setSelectedChannelInfo, token, youtubeDetails]);
 
     const handleToggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -27,6 +31,7 @@ function Dropdown({ setSelectedChannelInfo }) {
 
     const handleCategoryChange = (category) => {
         setSelectedCategory(category);
+        localStorage.setItem('selectedCategory', category);
         setIsDropdownOpen(false);
         const selectedChannel = youtubeDetails.find((detail) => detail.channelTitle === category);
         if (selectedChannel) {

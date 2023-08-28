@@ -7,6 +7,7 @@ import Clients from '../components/Client'
 import Aboutus from '../components/Aboutus'
 import Footer from '../components/Footer'
 import HistoryTable from '../components/HistoryTable'
+import Features from '../components/Features'
 
 function Index() {
     const isAuth = localStorage.getItem('eonToken')
@@ -19,9 +20,12 @@ function Index() {
             </div>
 
             <div id="pricing" className="pricing-tables">
-                <Price />
+                <Price header={true} />
             </div>
 
+            <div id="features" className="fetures section">
+                <Features header={true} />
+            </div>
             {/* <div id="services" className="services section">
                 <Services />
             </div> */}

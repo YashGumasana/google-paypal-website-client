@@ -5,6 +5,7 @@ import History from '../pages/History'
 import Payment from '../pages/Payment'
 import About from '../pages/About'
 import Setting from '../pages/Setting'
+import PayPalSubscriptionButton from '../components/plan/BasicPlan'
 
 
 function AuthRoutes() {

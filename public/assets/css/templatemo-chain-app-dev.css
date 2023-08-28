@@ -1317,8 +1317,8 @@ About Us
 }
 
 .about-us:after {
-  background-image: url(../images/about-bg.jpg);
-  width: 777px;
+  /* background-image: url(../images/about-bg.jpg); */
+  /* width: 777px;
   height: 1132px;
   content: '';
   position: absolute;
@@ -1326,7 +1326,7 @@ About Us
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 0;
+  z-index: 0; */
 }
 
 

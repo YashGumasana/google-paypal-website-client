@@ -44,6 +44,7 @@ export const get_all_report_of_user = (token) => async (dispatch) => {
         dispatch({ type: REPORT_TYPES.LOADING, payload: { loading: true } })
         const res = await getDataAPI(`user/get_all_report_of_user`, token)
 
+        console.log('res :>> ', res);
         dispatch({
             type: REPORT_TYPES.GET_STATISTICS,
             payload: {

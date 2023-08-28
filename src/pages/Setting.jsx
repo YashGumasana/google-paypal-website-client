@@ -8,6 +8,8 @@ function Setting() {
         <div>
             <Header />
             <Features />
+            <Price header={false} />
+
         </div>
     )
 }

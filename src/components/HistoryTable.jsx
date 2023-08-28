@@ -8,13 +8,15 @@ function HistoryTable() {
     const dispatch = useDispatch()
     const statistics = useSelector(state => state.report.statistics)
 
+
+
     useEffect(() => {
         dispatch(get_all_report_of_user(token))
     }, [dispatch, token])
 
     return (
         <div className='mt-[20px]'>
-            <div className="max-w-4xl mx-auto ">
+            <div className="max-w-[1050px] mx-auto ">
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-300 bg-white">
                         <thead className="bg-gray-100">
@@ -28,22 +30,27 @@ function HistoryTable() {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-300">
-                            {statistics.map(data => (
-                                <tr key={data.id}> {/* Make sure to provide a unique key */}
-                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.name}</td>
-                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.studentId}</td>
-                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.university}</td>
-                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.address}</td>
+                            {statistics?.map(data => (
+
+
+                                < tr key={data._id} > {/* Make sure to provide a unique key */}
+                                    <td className="px-6 py-4 md:whitespace-nowrap" > {data.channelId}</td>
+                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.analyze}</td>
+                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.statistics.viewCount}</td>
+                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.statistics.subscriberCount}</td>
+                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.statistics.videoCount}</td>
+                                    <td className="px-6 py-4 md:whitespace-nowrap">{data.last_report_date}</td>
                                 </tr>
+
                             ))}
 
 
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div >
             {/* </body> */}
-        </div>
+        </div >
 
     )
 }

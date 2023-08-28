@@ -4,6 +4,8 @@ import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { logout } from '../redux/actions/AuthAction';
 import { useDispatch } from 'react-redux';
 import { getOrderPaypalDetails } from '../redux/actions/user/PaymentAction';
+import SubscriptionButton from '../components/plan/BasicPlan';
+import PayPalSubscriptionButton from '../components/plan/BasicPlan';
 // import jwt_decode from 'jwt-decode'
 const clientId = process.env.REACT_APP_PAYPAL_CLIENT_ID;
 
@@ -18,7 +20,7 @@ function Payment() {
     const selectedPrice = location.state?.price;
     const planType = location.state?.planType;
     const planDuration = location.state?.planDuration;
-    const analyze = location.state?.analyze;
+    // const analyze = location.state?.analyze;
     const token = localStorage.getItem('eonToken')
 
     // console.log('analyze :>> ', analyze);
@@ -63,6 +65,7 @@ function Payment() {
                     </div>
                 </div>
             </header>
+            {/* <PayPalSubscriptionButton /> */}
             <div className='paypal-main'>
                 <div className='paypal-pop-up'>
                     <div className='selected-price-div'>Payment : ${selectedPrice}</div>
@@ -87,7 +90,7 @@ function Payment() {
                                 data.price = selectedPrice
                                 data.planType = planType
                                 data.planDuration = planDuration
-                                data.analyze = analyze
+                                // data.analyze = analyze
                                 dispatch(getOrderPaypalDetails({ data, token }))
 
 

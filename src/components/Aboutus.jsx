@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 function Aboutus() {
     return (
-        <div className="container">
-            <div className="row">
+        <div className="container max-w-[1400px] mt-[0px]">
+            <div className="row bg-gray-900 py-[40px] px-[40px]">
                 <div className="col-lg-6 align-self-center">
                     <div className="section-heading">
                         <h4>About <em>What We Do</em> &amp; Who We Are</h4>

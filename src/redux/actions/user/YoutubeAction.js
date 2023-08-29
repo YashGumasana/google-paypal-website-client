@@ -42,12 +42,12 @@ export const getUserYoutubeDetails = (token) => async (dispatch) => {
         const res = await getDataAPI(`user/getUserYoutubeDetails`, token)
 
 
-        console.log('getUserYoutubeDetails :>> ', res.data.data.response);
+        console.log('getUserYoutubeDetails :>> ', res?.data?.data?.response);
 
         dispatch({
             type: YOUTUBE_TYPES.INFLUENCER_DETAILS,
             payload: {
-                influencer_details: res.data.data.response
+                influencer_details: res?.data?.data?.response
             }
         })
         dispatch({ type: YOUTUBE_TYPES.LOADING, payload: { loading: false } })
@@ -56,7 +56,7 @@ export const getUserYoutubeDetails = (token) => async (dispatch) => {
         dispatch({
             type: GLOBALTYPES.ALERT,
             payload: {
-                error: err.response.data.message
+                error: err?.response?.data?.message
             }
         })
     }

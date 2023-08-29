@@ -34,20 +34,20 @@ function Home() {
 
         <>
             {/* <SubscribeButton /> */}
-            <div className="container">
+            <div className="container max-w-[1400px]  text-white">
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="row home-container" >
-                            <div className='yt-signin flex items-center justify-center' >
+                            <div className='yt-signin flex items-center justify-center bg-gray-900 p-[40px]  rounded-lg shadow-lg' >
                                 {
                                     token ?
                                         <>
                                             {
                                                 !loading && !isYoutubeSignIn &&
-                                                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "25px" }}>
+                                                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-                                                    <h3>1. Sign In with youtube channel</h3>
-                                                    <button style={{ backgroundColor: "white" }} className='yt-signin-button' onClick={handleYoutubeSignIn}>Sign In</button>
+                                                    <h3 className='text-white'>1. Sign In with youtube channel</h3>
+                                                    <button style={{ backgroundColor: "white", color: "red" }} className='yt-signin-button' onClick={handleYoutubeSignIn}>Sign In</button>
                                                 </div>
                                             }
                                             {

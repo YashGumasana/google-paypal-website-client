@@ -44,11 +44,10 @@ export const get_all_report_of_user = (token) => async (dispatch) => {
         dispatch({ type: REPORT_TYPES.LOADING, payload: { loading: true } })
         const res = await getDataAPI(`user/get_all_report_of_user`, token)
 
-        console.log('res :>> ', res);
         dispatch({
             type: REPORT_TYPES.GET_STATISTICS,
             payload: {
-                statistics: res.data.data.report
+                statistics: res?.data?.data?.report
             }
         })
         dispatch({ type: REPORT_TYPES.LOADING, payload: { loading: false } })
@@ -58,7 +57,7 @@ export const get_all_report_of_user = (token) => async (dispatch) => {
         dispatch({
             type: GLOBALTYPES.ALERT,
             payload: {
-                error: err.response.data.message
+                error: err?.response?.data?.message
             }
         })
     }

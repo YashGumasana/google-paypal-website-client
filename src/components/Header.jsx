@@ -54,13 +54,16 @@ function Header() {
     };
     return (
         <>
-            <header className=" header-area header-sticky  bg-light wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+            <header className=" header-area header-sticky bg-gray-950 wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
                             <nav style={!showMenu ? { display: "flex", alignItems: "center", justifyContent: "space-between" } : {}} className={!showMenu ? "main-nav main-nav-flex" : "main-nav"} >
+
+
                                 <Link to="/" className="logo" >
-                                    <img src="/assets/images/logo.png" alt="Chain App Dev" />
+                                    {/* <img src="/assets/images/logo.png" alt="Chain App Dev" /> */}
+                                    <div className='text-white text-[24px] font-bold'>Your Consult</div>
                                 </Link>
                                 <ul className={showMenu ? "nav nav-flex" : "nav"} id='header-nav-ul' >
                                     {/* Use ScrollLink from react-scroll */}
@@ -157,7 +160,7 @@ function Header() {
                                         <div className="gradient-button">
                                             {isAuth ?
                                                 // <Link id="modal_trigger" to="/" >
-                                                <div id="modal_trigger" onClick={() => dispatch(logout())}>Sign Out</div>
+                                                <div id="modal_trigger" className="rounded-none" onClick={() => dispatch(logout())}>Sign Out</div>
                                                 // </Link>
                                                 : <>
                                                     <div id="modal_trigger" onClick={handleGetButtonClick}>Sign In Now</div>
@@ -172,6 +175,7 @@ function Header() {
                                 <Link className="menu-trigger" onClick={handleMenuToggle}>
                                     <span>Menu</span>
                                 </Link>
+
                             </nav>
                         </div>
                     </div>
@@ -179,8 +183,8 @@ function Header() {
             </header>
 
 
-            {/* <div id="modal_trigger" > */}
-            {/* </div> */}
+
+
         </>
     );
 }

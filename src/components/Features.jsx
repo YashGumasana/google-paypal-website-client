@@ -86,17 +86,17 @@ function Features({ header }) {
 
     return (
         <>
-            <div className="container" >
-                <div className="row">
+            <div className="container max-w-[1400px] mt-[50px]" >
+                <div className="row bg-gray-900 py-[50px] px-[20px] flex items-center justify-center flex-col">
                     {header ? (
-                        <div className="col-lg-8 offset-lg-2 mt-[100px]">
-                            <div className="section-heading">
-                                <h4>3. Choose Your Favourite <em>Analyze</em></h4>
-                                <img src="assets/images/heading-line-dec.png" alt="" />
-                                <p>
+                        <div className="col-lg-8  ">
+                            <div className="section-heading flex items-center justify-center" >
+                                <h4>Your Current Plan : <em> None</em></h4>
+                                {/* <img src="assets/images/heading-line-dec.png" alt="" /> */}
+                                {/* <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                     tempor incididunt ut labore et dolore magna.
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                     ) : null}
@@ -111,7 +111,7 @@ function Features({ header }) {
                                 />
                             ))}
                             <button
-                                className="mt-3 px-4 py-[12px] border-2 bg-gray-700 text-white rounded-[10px] "
+                                className="mt-3 px-4 py-[12px] border-2 bg-gray-900 text-white rounded-[6px] "
                                 onClick={saveSelectedButtons}
                             >
                                 Save
@@ -130,7 +130,7 @@ export default Features
 const Button = ({ text, onClick, isSelected }) => {
     return (
         <button
-            className={`px-4 py-[12px]  font-bold ${isSelected ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700'} rounded-[10px] focus:outline-none`}
+            className={`px-4 py-[12px]  font-bold ${isSelected ? 'bg-[red] text-white' : 'bg-gray-100 text-gray-700'} rounded-[6px] focus:outline-none`}
             onClick={onClick}
         >
             {text}

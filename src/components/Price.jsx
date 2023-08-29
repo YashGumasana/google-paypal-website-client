@@ -35,10 +35,16 @@ function Price({ header }) {
 
         async function getActivePlan() {
             // dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } })
-            const res = await getDataAPI(`user/getActivePlan`, token)
+            try {
 
-            if (res) {
-                setActivePlan(res?.data?.data?.response?.planType)
+                const res = await getDataAPI(`user/getActivePlan`, token)
+
+                if (res) {
+                    setActivePlan(res?.data?.data?.response?.planType)
+                }
+            }
+            catch (error) {
+                console.log('error', error)
             }
 
             // dispatch({
@@ -50,10 +56,15 @@ function Price({ header }) {
 
         async function getPlan() {
             // dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } })
-            const res = await getDataAPI(`user/make_plan`)
+            try {
 
-            if (res) {
-                setPlans(res?.data?.data?.plans)
+                const res = await getDataAPI(`user/make_plan`)
+
+                if (res) {
+                    setPlans(res?.data?.data?.plans)
+                }
+            } catch (error) {
+                console.log('error', error)
             }
 
             // dispatch({
@@ -71,13 +82,13 @@ function Price({ header }) {
     }, [dispatch, token])
 
     return (
-        <div className="container" >
-            <div className="row">
+        <div className="container max-w-[1400px]" >
+            <div className="row bg-gray-900 py-[50px] px-[20px] rounded-[10px]">
                 {header ? (
                     <div className="col-lg-8 offset-lg-2">
                         <div className="section-heading">
                             <h4>2. We Have The Best Pre-Order <em>Prices</em> You Can Get</h4>
-                            <img src="assets/images/heading-line-dec.png" alt="" />
+                            {/* <img src="assets/images/heading-line-dec.png" alt="" /> */}
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna.
@@ -93,15 +104,15 @@ function Price({ header }) {
                         >
                             <div className="pricing-item-inner">
                                 <span className="price">${plan.price}</span>
-                                <h4>{plan.planType}</h4>
+                                <h4 style={{ color: "white" }}>{plan.planType}</h4>
                                 <ul>
                                     <li>{plan.planDuration}</li>
                                     {plan.features.map((feature, index) => (
                                         <li key={index}>{feature}</li>
                                     ))}
                                 </ul>
-                                <div className="border-button" onClick={() => token ? handlePurchase(plan.price, plan.planType, plan.planDuration) : handleSignIn()}>
-                                    Purchase
+                                <div className="border-button rounded-[10px]" onClick={() => token ? handlePurchase(plan.price, plan.planType, plan.planDuration) : handleSignIn()}>
+                                    Subscribe
                                 </div>
                             </div>
                         </div>

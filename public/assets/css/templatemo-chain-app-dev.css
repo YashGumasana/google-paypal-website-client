@@ -250,7 +250,8 @@ body {
 }
 
 .section-heading h4 {
-  color: #2a2a2a;
+  /* color: #2a2a2a; */
+  color: white;
   font-size: 30px;
   font-weight: 700;
   text-transform: capitalize;
@@ -259,7 +260,8 @@ body {
 
 .section-heading h4 em {
   font-style: normal;
-  color: #4b8ef1;
+  /* color: #4b8ef1; */
+  color: red;
 }
 
 .section-heading img {
@@ -322,7 +324,9 @@ body {
   text-transform: capitalize;
   font-size: 15px;
   background: rgb(19, 175, 240);
-  background: linear-gradient(105deg, rgba(91, 104, 235, 1) 0%, rgba(40, 225, 253, 1) 100%);
+  /* background: linear-gradient(105deg, rgba(91, 104, 235, 1) 0%, rgba(40, 225, 253, 1) 100%); */
+  background: linear-gradient(105deg, rgba(255, 0, 0, 1) 0%, rgb(255, 139, 139) 100%);
+
   border-radius: 10px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
@@ -333,19 +337,23 @@ body {
   border: none;
   color: #fff !important;
   background: rgb(19, 175, 240);
-  background: linear-gradient(105deg, rgba(91, 104, 235, 1) 0%, rgba(40, 225, 253, 1) 100%);
+  /* background: linear-gradient(105deg, rgba(91, 104, 235, 1) 0%, rgba(40, 225, 253, 1) 100%); */
+  background: linear-gradient(105deg, rgba(255, 0, 0, 1) 0%, rgb(255, 139, 139) 100%);
+
 }
 
 .border-button {
   cursor: pointer;
   display: inline-block !important;
   padding: 10px 20px !important;
-  color: #4b8ef1 !important;
-  border: 1px solid #4b8ef1;
+  /* color: #4b8ef1 !important; */
+  /* border: 1px solid #4b8ef1; */
+  color: red;
+  /* border: 1px solid red; */
   text-transform: capitalize;
   font-size: 15px;
   display: inline-block;
-  background-color: #fff;
+  background-color: white;
   border-radius: 23px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
@@ -353,7 +361,8 @@ body {
 }
 
 .border-button:hover {
-  background-color: #4b8ef1;
+  /* background-color: #4b8ef1; */
+  background-color: red;
   color: #fff !important;
 }
 
@@ -419,7 +428,7 @@ header
 }
 
 .header-area .main-nav {
-  min-height: 80px;
+  min-height: 100px;
   background: transparent;
 }
 
@@ -432,7 +441,7 @@ header
 }
 
 .header-area .main-nav .logo {
-  line-height: 100px;
+  /* line-height: 100px; */
   float: left;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -450,7 +459,7 @@ header
 
 .header-area .main-nav .nav {
   float: right;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-right: 0px;
   background-color: transparent;
   -webkit-transition: all 0.3s ease 0s;
@@ -490,7 +499,7 @@ header
   display: block;
   font-weight: 500;
   font-size: 15px;
-  color: #2a2a2a;
+  color: white;
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -504,7 +513,7 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #4b8ef1 !important;
+  color: #FF0000 !important;
 }
 
 .header-area .main-nav .nav li:last-child a.active {
@@ -711,7 +720,7 @@ header
 }
 
 .header-area .nav {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .header-area.header-sticky .nav li a.active {
@@ -1048,21 +1057,22 @@ Banner Style
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding: 250px 120px 150px 120px;
+  margin: 50px;
+  /* padding: 250px 120px 150px 120px; */
   position: relative;
   overflow: hidden;
 }
 
 .main-banner:after {
   content: '';
-  background-image: url(../images/slider-left-dec.png);
+  /* background-image: url(../images/slider-left-dec.png); */
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
   z-index: 1;
 }
 
@@ -1260,7 +1270,7 @@ About Us
 */
 
 .about-us {
-  padding-top: 130px;
+  padding-top: 50px;
   position: relative;
 }
 
@@ -1483,7 +1493,7 @@ The Clients
 */
 
 .pricing-tables {
-  padding-top: 130px;
+  /* padding-top: 130px; */
 }
 
 .pricing-tables .section-heading {
@@ -1499,8 +1509,9 @@ The Clients
 
 .pricing-item-regular {
   margin-top: 30px;
+  background-color: rgb(10 20 30);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
-  border-radius: 50px;
+  border-radius: 10px;
   padding: 90px 30px;
   text-align: center;
   position: relative;
@@ -1553,7 +1564,8 @@ The Clients
 }
 
 .pricing-item-regular ul li {
-  color: #4b8ef1;
+  /* color: #4b8ef1; */
+  color: white;
   font-size: 15px;
   margin-bottom: 15px;
 }
@@ -1609,7 +1621,7 @@ The Clients
 
 .pricing-item-pro span.price {
   font-size: 40px;
-  color: #fff;
+  /* color: rgb(3 7 18) !important; */
   position: absolute;
   font-weight: 700;
   z-index: 1;
